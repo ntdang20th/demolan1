@@ -26,7 +26,7 @@ def ResponesData(request):
         'Ét ô ét!',
         'trời ơi tế cái rụp rồi',
         settings.EMAIL_HOST_USER,
-        ['ntdang_20th@student.agu.edu.vn'],
+        ['ntdang_20th@student.agu.edu.vn', 'eliane.schroeter@gmail.com'],
         connection=connection,
     )
     connection.close()
