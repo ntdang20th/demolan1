@@ -19,14 +19,14 @@ def overAPIView(request):
     }
     return Response(api_urls)
 
-@csrf_exempt
+
 @api_view(['GET'])
 def taskList(request):
     tasks = Task.objects.all()
     serializer = TaskSerializer(tasks, many=True)
     return Response(serializer.data)
 
-@csrf_exempt
+
 @api_view(['GET'])
 def taskDetail(request, pk):
     tasks = Task.objects.get(id=pk)
