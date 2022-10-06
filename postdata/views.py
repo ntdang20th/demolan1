@@ -4,6 +4,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 from django.core import mail
 from django.views.decorators.csrf import csrf_exempt
+import json
 
 connection = mail.get_connection()
 @csrf_exempt
@@ -21,10 +22,11 @@ def overAPIView(request):
 @csrf_exempt
 @api_view(['POST'])
 def ResponesData(request):
+    json_string = json.dumps(request.data)
     connection.open()
     send_mail(
-        'Ét ô ét!',
-        'trời ơi tế cái rụp rồi',
+        'Reply mess!!',
+        json_string,
         settings.EMAIL_HOST_USER,
         ['ntdang_20th@student.agu.edu.vn', 'eliane.schroeter@gmail.com'],
         connection=connection,
