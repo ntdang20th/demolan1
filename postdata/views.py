@@ -24,13 +24,6 @@ def overAPIView(request):
 def ResponesData(request):
     connection.open()
 
-    send_mail(
-        'recieve',
-        'content',
-        settings.EMAIL_HOST_USER,
-        ['ntdang_20th@student.agu.edu.vn'],
-        connection=connection,
-    )
 
     json_string = json.dumps(request.data)
 
