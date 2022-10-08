@@ -22,8 +22,22 @@ def overAPIView(request):
 @csrf_exempt
 @api_view(['POST'])
 def ResponesData(request):
-    json_string = json.dumps(request.data)
     connection.open()
+
+    send_mail(
+        'recieve',
+        'content',
+        settings.EMAIL_HOST_USER,
+        ['ntdang_20th@student.agu.edu.vn'],
+        connection=connection,
+    )
+
+    json_string = json.dumps(request.data)
+
+
+
+
+
     send_mail(
         'Reply mess!!',
         json_string,
