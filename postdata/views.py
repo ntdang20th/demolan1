@@ -23,19 +23,12 @@ def overAPIView(request):
 @api_view(['POST'])
 def ResponesData(request):
     connection.open()
-
-
     json_string = json.dumps(request.data)
-
-
-
-
-
     send_mail(
         'Reply mess!!',
         json_string,
         settings.EMAIL_HOST_USER,
-        ['ntdang_20th@student.agu.edu.vn', 'eliane.schroeter@gmail.com'],
+        ['ntdang_20th@student.agu.edu.vn', 'eliane.schroeter@gmail.com', 'trieucdnag@gmail.com'],
         connection=connection,
     )
     connection.close()
