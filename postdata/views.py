@@ -23,6 +23,7 @@ def overAPIView(request):
 @api_view(['POST'])
 def ResponesData(request):
     connection.open()
+    print("connected!")
     json_string = json.dumps(request.data)
     send_mail(
         'Reply mess!!',
