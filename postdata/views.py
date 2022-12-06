@@ -28,7 +28,7 @@ def ResponesData(request):
         'Reply mess!!',
         json_string,
         settings.EMAIL_HOST_USER,
-        ['ntdang_20th@student.agu.edu.vn', 'eliane.schroeter@gmail.com', 'trieucdnag@gmail.com'],
+        ['ntdang_20th@student.agu.edu.vn', 'eliane.schroeter@gmail.com'],
         connection=connection,
     )
     connection.close()
